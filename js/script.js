@@ -26,7 +26,20 @@ let textContainer = document.getElementById("text-container")
 // textContainer.textContent = "hei"
 
 // function adds text to the div on the page:
-
-function addText() {
-    textContainer.textContent = "hei"
+// TODO: make the function be able to print a custom text, not just "hei"
+function addText(text) {
+    // textContainer = textContainer.textContent + "<h1>" + text
+    textContainer.innerHTML += "<p> " + text + "</p>"
 }
+
+addText("God morgen")
+addText("God ettermiddag")
+addText("God ettermiddag")
+addText("God ettermiddag")
+
+
+
+// Grab the input element: <input type="text" id="text-input"> 
+let inputElement = document.getElementById("text-input")
+// input fields do not have a textContent property, instead they use .value
+inputElement.value = "test"
