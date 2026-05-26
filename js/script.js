@@ -35,37 +35,25 @@ let personAge = 46
 
 let person = {
     name: "Patryk",
-    age: 46
+    age: 46,
+    greet() {
+        console.log("Hi")
+    }
 }
 
-console.log(document)
+let jsonTest = JSON.stringify(person) // JSON.stringify converts a javascript object to json
 
+console.log(jsonTest)
+console.log(jsonTest.name) // json is a string
 
-// describe a table as an object
+// to use a json object, as a real object....
 
-let workingTable = {
-    color: "black",
-    legs: 2,
-    available: true,
-}
+let backToObject = JSON.parse(jsonTest)
 
-// CSV - Comma separated values
+console.log(backToObject)
 
-// første rad: header-names
-// alle andre rader: er da data
-let tableAsCSV = `
-    color, legs, available, 
-    black, 2, true",
-`
+backToObject.age += 5
 
-
-
-
-
-
-
-
-
-
+console.log(backToObject.age)
 
 
