@@ -2,6 +2,10 @@
 // Data variables
 let todolist = [] // create an empty array to store our todos
 
+// localstorage key
+let localStorageKey = "todolist"
+
+
 // add item to an array
 // todolist.push("ny ting")
 // todolist.push(1234)
@@ -13,7 +17,7 @@ let todolist = [] // create an empty array to store our todos
 // todolist = []
 
 
-console.log(todolist)
+//console.log(todolist)
 
 
 
@@ -38,12 +42,20 @@ function addText() {
     
     // clean up the input field
     inputElement.value = ""
+ 
+    // single todolist item object:
+    let todoItem = {
+        task: text
+    }
 
     // add the item to the todolist array
-    todolist.push(text)
+    todolist.push(todoItem)
 
     // update localStorage:
-    localStorage.setItem("todolist", todolist)
+    // 1. convert the javascript array to JSON
+    let todoListJSON = JSON.stringify(todolist)
+    // 2. store the JSON representation in local storage
+    localStorage.setItem(localStorageKey, todoListJSON)
 
     console.log(todolist)
 }
@@ -53,14 +65,17 @@ function removeElement(eventInfo) {
     eventInfo.target.remove() // remove the element
 }
 
-// objekter kan ha flere ting, men key må være unik
-// f.eks:
 
-// single todolist item object:
-let todoItem = {
-    task: ""
-}
+// on page load 
+// 1. read todolist from localStorage
+// 2. convert it from JSON to javascript (update the array variable as well)
+// 3. display each item on the page
 
 
+let todoData = localStorage.getItem(localStorageKey)
+todolist = JSON.parse(todoData)
 
-//console.log(todolist)
+console.log(todolist)
+
+// create todo elements on the page based on todolist from localstorage
+
