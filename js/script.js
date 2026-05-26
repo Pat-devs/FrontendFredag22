@@ -12,7 +12,7 @@ function addText() {
  
     let text = inputElement.value // get the text from the input element
 
-    textContainer.innerHTML += "<p> " + text + "</p>"
+    textContainer.innerHTML += "<p> " + text + "</p>" // TODO: innerHTML causes events to be removed.
 }
 
 // find the paragraph with id "item-1"
@@ -26,3 +26,9 @@ firstParagraphElement.addEventListener("click", removeElement)
 function removeElement(eventInfo) {
     eventInfo.target.remove()
 }
+
+
+
+let secondParagraphElement = document.getElementById("item-2")
+
+secondParagraphElement.addEventListener("click",removeElement )
