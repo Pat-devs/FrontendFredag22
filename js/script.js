@@ -41,7 +41,9 @@ function addText() {
 
     // add the item to the todolist array
     todolist.push(text)
-    
+
+    // update localStorage:
+    localStorage.setItem("todolist", todolist)
 
     console.log(todolist)
 }
