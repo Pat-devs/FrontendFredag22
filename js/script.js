@@ -25,3 +25,47 @@ function addText() {
 function removeElement(eventInfo) {
     eventInfo.target.remove() // remove the element
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+let personName = "Patryk"
+let personAge = 46
+
+// same but as an object:
+
+let person = {
+    name: "Patryk",
+    age: 46
+}
+
+console.log(document)
+
+
+// describe a table as an object
+
+let workingTable = {
+    color: "black",
+    legs: 2,
+    available: true,
+}
+
+// CSV - Comma separated values
+
+// første rad: header-names
+// alle andre rader: er da data
+let tableAsCSV = `
+    color, legs, available, 
+    black, 2, true",
+`
+
+
+
+
+
+
+
+
+
+
+
+
