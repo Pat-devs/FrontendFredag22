@@ -36,7 +36,7 @@ function addText() {
 */
 
 
-// find the paragraph with id "test-text"
+// find the paragraph with id "item-1"
 let firstParagraphElement = document.getElementById("item-1")
 
 //paragraphElement.remove()
@@ -46,4 +46,16 @@ firstParagraphElement.addEventListener("click", removeElement)
 // removes a given element from the page
 function removeElement() {
     firstParagraphElement.remove()
+}
+
+// make the "item-2" pagarphah have removability as well
+
+// find the paragraph with id "item-2"
+let secondParagraphElement = document.getElementById("item-2")
+
+secondParagraphElement.addEventListener("click", removeElementV2)
+
+// removes a given element from the page
+function removeElementV2() {
+    secondParagraphElement.remove()
 }
