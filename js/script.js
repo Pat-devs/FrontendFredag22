@@ -26,34 +26,30 @@ function removeElement(eventInfo) {
     eventInfo.target.remove() // remove the element
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-let personName = "Patryk"
-let personAge = 46
-
-// same but as an object:
-
+// objekter kan ha flere ting, men key må være unik
+// f.eks:
 let person = {
     name: "Patryk",
-    age: 46,
-    greet() {
-        console.log("Hi")
-    }
+    age: 46
 }
+let person2 = {
+    name: "John",
+    age: 2
+}
+// arrays
 
-let jsonTest = JSON.stringify(person) // JSON.stringify converts a javascript object to json
+let colors = ["black", "white", "blue", "green", "green"]
+// console.log(colors)
 
-console.log(jsonTest)
-console.log(jsonTest.name) // json is a string
-
-// to use a json object, as a real object....
-
-let backToObject = JSON.parse(jsonTest)
-
-console.log(backToObject)
-
-backToObject.age += 5
-
-console.log(backToObject.age)
+let luckyNumbers = [8532,1325,13,991,9,0]
+// console.log(luckyNumbers)
 
 
+// todoliste as array
+
+let todolist = [
+    person, 
+    person2
+]
+
+console.log(todolist)
