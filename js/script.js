@@ -34,6 +34,7 @@ buttonElementAdd.addEventListener("click", addText)
 function addText() {
     let text = inputElement.value // get the text from the input element
     
+    // create html element for the todoitem:
     let paragraphElement = document.createElement("p")
     paragraphElement.textContent = text
     paragraphElement.addEventListener("click", removeElement)
@@ -73,9 +74,29 @@ function removeElement(eventInfo) {
 
 
 let todoData = localStorage.getItem(localStorageKey)
-todolist = JSON.parse(todoData)
+// || symbol means "or"; in other words: if  JSON.parse(todoData) is empty it will then try the value following the || symbol (in this case an empty array)
+todolist = JSON.parse(todoData) || [] 
 
 console.log(todolist)
 
 // create todo elements on the page based on todolist from localstorage
+
+
+// creates element with given parameter as text content
+function createTodoElement(text) {
+    // create html element for the todoitem:
+    let paragraphElement = document.createElement("p")
+    paragraphElement.textContent = text
+    paragraphElement.addEventListener("click", removeElement)
+
+    textContainer.append(paragraphElement)
+}
+
+
+// call createElement with data from the array
+createTodoElement(todolist[0].task)
+createTodoElement(todolist[1].task)
+createTodoElement(todolist[2].task) // this one fails here because i have less than 3 items
+
+
 
