@@ -1,3 +1,22 @@
+
+// Data variables
+let todolist = [] // create an empty array to store our todos
+
+// add item to an array
+// todolist.push("ny ting")
+// todolist.push(1234)
+
+// remove an item from an array
+// todolist.splice()
+
+// reset (clear) an array
+// todolist = []
+
+
+console.log(todolist)
+
+
+
 // Dom elements:
 let inputElement = document.getElementById("text-input")
 let buttonElementAdd = document.getElementById("add-text")
@@ -19,6 +38,12 @@ function addText() {
     
     // clean up the input field
     inputElement.value = ""
+
+    // add the item to the todolist array
+    todolist.push(text)
+    
+
+    console.log(todolist)
 }
 
 // remove element based on given event-argument 
@@ -28,28 +53,12 @@ function removeElement(eventInfo) {
 
 // objekter kan ha flere ting, men key må være unik
 // f.eks:
-let person = {
-    name: "Patryk",
-    age: 46
+
+// single todolist item object:
+let todoItem = {
+    task: ""
 }
-let person2 = {
-    name: "John",
-    age: 2
-}
-// arrays
-
-let colors = ["black", "white", "blue", "green", "green"]
-// console.log(colors)
-
-let luckyNumbers = [8532,1325,13,991,9,0]
-// console.log(luckyNumbers)
 
 
-// todoliste as array
 
-let todolist = [
-    person, 
-    person2
-]
-
-console.log(todolist)
+//console.log(todolist)
