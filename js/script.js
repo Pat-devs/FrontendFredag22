@@ -12,23 +12,13 @@ function addText() {
  
     let text = inputElement.value // get the text from the input element
 
-    textContainer.innerHTML += "<p> " + text + "</p>" // TODO: innerHTML causes events to be removed.
+    // textContainer.innerHTML += "<p> " + text + "</p>" // TODO: innerHTML causes events to be removed.
+
+    // recreate the innerHTML line with createElement:
+
+    // 1. Create an element in memory, and store it in a variable:
+    let paragraphElement = document.createElement("p")
+
+    console.log(paragraphElement)
+
 }
-
-// find the paragraph with id "item-1"
-let firstParagraphElement = document.getElementById("item-1")
-
-//paragraphElement.remove()
-
-firstParagraphElement.addEventListener("click", removeElement)
-
-// removes any given element from the page
-function removeElement(eventInfo) {
-    eventInfo.target.remove()
-}
-
-
-
-let secondParagraphElement = document.getElementById("item-2")
-
-secondParagraphElement.addEventListener("click",removeElement )
