@@ -10,41 +10,35 @@ let buttonElementAdd = document.getElementById("add-text")
 let textContainer = document.getElementById("text-container")
 
 // event & event handler functions
-buttonElementAdd.addEventListener("click", addText)
+buttonElementAdd.addEventListener("click", addTodo)
 
-// add text function reads value from the input field and then adds it to the div container
-/*
-1. reads input
-2. creates a paragraph (and uses input from #1)
-3. appens the paragraph to textContainer
-4. cleans input
- * 5. creates "Data-transfer" object (to store input-text properly)
- * 6. adds the object (from #5) to the todolist array
- * 7. Converts the todolist to a JSON string
- * 8. Updates localstorage with new JSON string
 
-*/
-function addText() {
+function addTodo() {
     let text = inputElement.value // get the text from the input element
     
+    createTodoElement(text)
+    
+    // clean up the input field
+    inputElement.value = ""
+ 
+    createTodoObject(text) // call createTodo function with text as argument
+    updateLocalStorage() // kjør updateLocalStorage
+
+    console.log(todolist)
+}
+
+// creates single todoitem element
+function createTodoElement(text) {
     // create html element for the todoitem:
     let paragraphElement = document.createElement("p")
     paragraphElement.textContent = text
     paragraphElement.addEventListener("click", removeElement)
     
     textContainer.append(paragraphElement)
-    
-    // clean up the input field
-    inputElement.value = ""
- 
-    createTodo(text) // call createTodo function with text as argument
-    updateLocalStorage() // kjør updateLocalStorage
-
-    console.log(todolist)
 }
 
-// createTodo (in javascript array)
-function createTodo(text) {
+// createTodoObject (in javascript array)
+function createTodoObject(text) {
     // single todolist item object:
     let todoItem = {
         task: text
@@ -77,8 +71,17 @@ function removeElement(eventInfo) {
     // 2. find the task in the todolist
     // console.log(todolist)
 
-    // loop through exisiting todolist (in from localStorage)
+    removeTodoByName(taskName)
 
+    updateLocalStorage()
+
+
+    console.log(todolist)
+}
+
+function removeTodoByName(taskName) {
+
+    // loop through exisiting todolist (in from localStorage)
     for (let index = 0; index < todolist.length; index++) {
         let todoItem = todolist[index];
 
@@ -93,20 +96,6 @@ function removeElement(eventInfo) {
         }
         
     }
-
-    // update local storage to sync it with our todolist array
-    localStorage.setItem(localStorageKey, JSON.stringify(todolist))
-
-
-    console.log(todolist)
-
-    for (let todoItem of todolist) {
-        // check if todoItem matches taskName
-        if (todoItem.task == taskName) {
-        
-        }
-    }
-
 }
 
 
