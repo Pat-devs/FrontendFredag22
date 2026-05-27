@@ -1,4 +1,3 @@
-
 // Data variables
 let todolist = [] // create an empty array to store our todos
 
@@ -14,6 +13,17 @@ let textContainer = document.getElementById("text-container")
 buttonElementAdd.addEventListener("click", addText)
 
 // add text function reads value from the input field and then adds it to the div container
+/*
+1. reads input
+2. creates a paragraph (and uses input from #1)
+3. appens the paragraph to textContainer
+4. cleans input
+5. creates "Data-transfer" object (to store input-text properly)
+6. adds the object (from #5) to the todolist array
+7. Converts the todolist to a JSON string
+8. Updates localstorage with new JSON string
+
+*/
 function addText() {
     let text = inputElement.value // get the text from the input element
     
@@ -35,14 +45,20 @@ function addText() {
     // add the item to the todolist array
     todolist.push(todoItem)
 
+    updateLocalStorage() // kjør updateLocalStorage
+
+    console.log(todolist)
+}
+
+// update local storage
+function updateLocalStorage() {
     // update localStorage:
     // 1. convert the javascript array to JSON
     let todoListJSON = JSON.stringify(todolist)
     // 2. store the JSON representation in local storage
     localStorage.setItem(localStorageKey, todoListJSON)
-
-    console.log(todolist)
 }
+
 
 // remove element based on given event-argument 
 function removeElement(eventInfo) {
