@@ -96,71 +96,14 @@ function createTodoElement(text) {
 
 let cities = ["Oslo", "Bergen", "Trondheim", "Porsgrunn", "Skien", "Haugesund"]
 
-// createTodoElement(cities[0])
-// createTodoElement(cities[1])
-// createTodoElement(cities[2])
-// createTodoElement(cities[3])
-// createTodoElement(cities[4])
-// createTodoElement(cities[5])
-// createTodoElement(cities[6])
-// call createElement with data from the array
-// createTodoElement(todolist[0].task)
-// createTodoElement(todolist[1].task)
-// createTodoElement(todolist[2].task) // this one fails here because i have less than 3 items
+// other useful array related loops:
 
-// Loops
-
-// needs a counter (to stop, or break the loop)
-
-// for loop 
-
-// loop 5 times
-for (
-        let counter = 0; // create a counter variable and initilize it at 0
-        counter < 5; // condition 
-        counter = counter + 1 // increcrement 
-    ) {
-    
-        // code that runs whole loop condition is "truthy"
-        // console.log("Counter is now ", counter)
+for (let city of cities) {
+    console.log(city)
 }
 
+let people = ["John", "Anna", "Bob"]
 
-// count from 10 to 0 (inclusive)
-for (let counter = 10; counter >= 0; counter = counter - 1) {
-    // console.log("counter is now ", counter)
+for (let person of people) {
+    console.log(person)
 }
-
-// While loops:
-
-// count 0 to 5 (inclusive)
-
-let counter = 0;
-
-while (counter <= 5) {
-    // console.log("counter is now ", counter)
-
-    // adjust counter:
-    counter = counter + 1
-}
-
-
-// while loop practical example
-
-let enemies = ["grognak", "cat", "crocodile", "snake"]
-
-// check length of an array?
-
-// enemies.pop()
-// console.log(enemies.length)
-
-
-while(enemies.length > 0) {
-
-    // kill an enemy
-    let currentEnemy = enemies.pop()
-    console.log("Omg you killed ", currentEnemy)
-}
-
-console.log(enemies)
-
