@@ -131,3 +131,15 @@ for (let counter = 10; counter >= 0; counter = counter - 1) {
     // console.log("counter is now ", counter)
 }
 
+// While loops:
+
+// count 0 to 5 (inclusive)
+
+let counter = 0;
+
+while (counter <= 5) {
+    console.log("counter is now ", counter)
+
+    // adjust counter:
+    counter = counter + 1
+}
