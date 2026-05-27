@@ -62,9 +62,23 @@ function removeElement(eventInfo) {
     for (let index = 0; index < todolist.length; index++) {
         let todoItem = todolist[index];
 
-        console.log(todoItem)
+        // if taskName (we clicked) matches todoItem.task: then remove it from the localStorage
+        if (todoItem.task == taskName) {
+            console.log("Yes! we have found " + taskName + " to be matching " + todoItem.task) 
+            // use the index value
+            // console.log(" which is at index " + index)
+            console.log(todoItem)
+            
+            todolist.splice(index, 1)
+        }
         
     }
+
+    // update local storage to sync it with our todolist array
+    localStorage.setItem(localStorageKey, JSON.stringify(todolist))
+
+
+    console.log(todolist)
 
     for (let todoItem of todolist) {
         // check if todoItem matches taskName
@@ -110,4 +124,3 @@ for (let todo of todolist) {
     // console.log(todo)
     createTodoElement(todo.task)
 }
-
