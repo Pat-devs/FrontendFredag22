@@ -138,8 +138,29 @@ for (let counter = 10; counter >= 0; counter = counter - 1) {
 let counter = 0;
 
 while (counter <= 5) {
-    console.log("counter is now ", counter)
+    // console.log("counter is now ", counter)
 
     // adjust counter:
     counter = counter + 1
 }
+
+
+// while loop practical example
+
+let enemies = ["grognak", "cat", "crocodile", "snake"]
+
+// check length of an array?
+
+// enemies.pop()
+// console.log(enemies.length)
+
+
+while(enemies.length > 0) {
+
+    // kill an enemy
+    let currentEnemy = enemies.pop()
+    console.log("Omg you killed ", currentEnemy)
+}
+
+console.log(enemies)
+
