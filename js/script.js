@@ -20,8 +20,8 @@ buttonElementAdd.addEventListener("click", addText)
 4. cleans input
 5. creates "Data-transfer" object (to store input-text properly)
 6. adds the object (from #5) to the todolist array
-7. Converts the todolist to a JSON string
-8. Updates localstorage with new JSON string
+ * 7. Converts the todolist to a JSON string
+ * 8. Updates localstorage with new JSON string
 
 */
 function addText() {
@@ -37,6 +37,15 @@ function addText() {
     // clean up the input field
     inputElement.value = ""
  
+    createTodo()
+
+    updateLocalStorage() // kjør updateLocalStorage
+
+    console.log(todolist)
+}
+
+// createTodo (in javascript array)
+function createTodo() {
     // single todolist item object:
     let todoItem = {
         task: text
@@ -44,10 +53,6 @@ function addText() {
 
     // add the item to the todolist array
     todolist.push(todoItem)
-
-    updateLocalStorage() // kjør updateLocalStorage
-
-    console.log(todolist)
 }
 
 // update local storage
