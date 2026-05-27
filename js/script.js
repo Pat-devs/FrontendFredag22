@@ -77,13 +77,15 @@ let todoData = localStorage.getItem(localStorageKey)
 // || symbol means "or"; in other words: if  JSON.parse(todoData) is empty it will then try the value following the || symbol (in this case an empty array)
 todolist = JSON.parse(todoData) || [] 
 
-console.log(todolist)
 
 // create todo elements on the page based on todolist from localstorage
 
 
-// creates element with given parameter as text content
+// creates todo element with click event attached to it.
+// takes a text as argument, and appends it to textContainer
 function createTodoElement(text) {
+
+    console.log(text)
     // create html element for the todoitem:
     let paragraphElement = document.createElement("p")
     paragraphElement.textContent = text
@@ -92,11 +94,22 @@ function createTodoElement(text) {
     textContainer.append(paragraphElement)
 }
 
+let cities = ["Oslo", "Bergen", "Trondheim", "Porsgrunn", "Skien", "Haugesund"]
 
+// createTodoElement(cities[0])
+// createTodoElement(cities[1])
+// createTodoElement(cities[2])
+// createTodoElement(cities[3])
+// createTodoElement(cities[4])
+// createTodoElement(cities[5])
+// createTodoElement(cities[6])
 // call createElement with data from the array
-createTodoElement(todolist[0].task)
-createTodoElement(todolist[1].task)
-createTodoElement(todolist[2].task) // this one fails here because i have less than 3 items
+// createTodoElement(todolist[0].task)
+// createTodoElement(todolist[1].task)
+// createTodoElement(todolist[2].task) // this one fails here because i have less than 3 items
+
+
+
 
 
 
