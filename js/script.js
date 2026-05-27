@@ -108,8 +108,26 @@ let cities = ["Oslo", "Bergen", "Trondheim", "Porsgrunn", "Skien", "Haugesund"]
 // createTodoElement(todolist[1].task)
 // createTodoElement(todolist[2].task) // this one fails here because i have less than 3 items
 
+// Loops
+
+// needs a counter (to stop, or break the loop)
+
+// for loop 
+
+// loop 5 times
+for (
+        let counter = 0; // create a counter variable and initilize it at 0
+        counter < 5; // condition 
+        counter = counter + 1 // increcrement 
+    ) {
+    
+        // code that runs whole loop condition is "truthy"
+        // console.log("Counter is now ", counter)
+}
 
 
-
-
+// count from 10 to 0 (inclusive)
+for (let counter = 10; counter >= 0; counter = counter - 1) {
+    // console.log("counter is now ", counter)
+}
 
